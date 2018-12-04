@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import List from "./List";
+import logo from './logo.svg'; 
 
 class ToDoList extends Component {
     constructor(props){
@@ -12,7 +13,10 @@ class ToDoList extends Component {
     render(){
         return (
             <div>
+                <div className="header">
+                <img src={logo} className='App-logo' alt="logo"/>
                 <h1>Todo App</h1>
+                </div>
                 <form onSubmit={this._onSubmit}>
                     <input value={this.state.term} onChange={this._onChange} placeholder="Enter Todo"/>
                     <button type="submit">add</button>
