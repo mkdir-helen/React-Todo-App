@@ -8,7 +8,7 @@ const List = (props) => {
             return (
                 <li key={index}>
                     {item}
-                    {/* <button >Done</button> */}
+                    <button onClick={(e)=> props._delete(index)}>Done</button>
                 </li>
                 
                 )

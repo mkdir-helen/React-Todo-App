@@ -17,7 +17,7 @@ class ToDoList extends Component {
                     <input value={this.state.term} onChange={this._onChange} placeholder="Enter Todo"/>
                     <button type="submit">add</button>
                 </form>
-                <List items = {this.state.items}/>
+                <List items={this.state.items} _delete={this._delete} />
             </div>
         );
     }
@@ -36,10 +36,10 @@ class ToDoList extends Component {
         })
     }
     _delete = (id) => {
-        // let filtered = this.state.items.filter(item => {
-        //     return item.index 
-        // })
-        console.log(id);
+        const items = this.state.items.filter((item, todoIndex) => {
+            return todoIndex !== id
+          })
+          this.setState({ items })
     }
 }
 
