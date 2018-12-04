@@ -24,11 +24,11 @@ ul button {
   -ms-border-radius: 25%;
   -o-border-radius: 25%;
 }
-ul button:active {
-  background: #61dafb;
-}
 ul button:hover {
   background: silver;
+}
+ul button:active {
+  background: #61dafb;
 }
 
 
