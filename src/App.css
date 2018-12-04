@@ -10,13 +10,35 @@ ul {
   width: 80%;
   margin: 2vmin auto;
   text-align: left;
+  list-style: none;
 }
+li{
+  border: 1px solid gainsboro;
+  padding: 5px;
+}
+ul button {
+  float: right;
+  border-radius: 25%;
+  -webkit-border-radius: 25%;
+  -moz-border-radius: 25%;
+  -ms-border-radius: 25%;
+  -o-border-radius: 25%;
+}
+ul button:active {
+  background: #61dafb;
+}
+ul button:hover {
+  background: silver;
+}
+
+
 .header{
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #282c34;
   color: white;
+  margin-bottom: 10px;
 }
 .App-header {
   background-color: #282c34;
