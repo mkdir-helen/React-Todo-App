@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import List from "./List";
+import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
 import logo from './logo.svg'; 
 
 class ToDoList extends Component {
@@ -21,7 +22,7 @@ class ToDoList extends Component {
                     <input value={this.state.term} onChange={this._onChange} placeholder="Enter Todo"/>
                     <button type="submit">add</button>
                 </form>
-                <List items={this.state.items} _delete={this._delete} />
+                <List items={this.state.items} _delete={this._delete} onSortEnd={this.onSortEnd} />
             </div>
         );
     }
@@ -45,6 +46,12 @@ class ToDoList extends Component {
           })
           this.setState({ items })
     }
+
+    onSortEnd = ({oldIndex, newIndex}) => {
+        this.setState({
+          items: arrayMove(this.state.items, oldIndex, newIndex),
+        });
+      };
 }
 
 export default ToDoList;
