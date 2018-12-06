@@ -16,6 +16,11 @@ li{
   border: 1px solid gainsboro;
   padding: 5px;
 }
+li:hover{
+  cursor: -webkit-grab;
+  cursor: grab;
+  border: 1px solid#be61fb;
+}
 ul button {
   float: right;
   border-radius: 25%;
@@ -25,10 +30,12 @@ ul button {
   -o-border-radius: 25%;
 }
 ul button:hover {
-  background: silver;
+  background: #2c384e;
+  color: white;
 }
 ul button:active {
-  background: #61dafb;
+  background: #2c384e;
+  color: white;
 }
 
 
@@ -52,7 +59,7 @@ ul button:active {
 }
 
 .App-link {
-  color: #61dafb;
+  color: #61dafb; 
 }
 
 @keyframes App-logo-spin {
@@ -63,3 +70,12 @@ ul button:active {
     transform: rotate(360deg);
   }
 }
+
+.help{
+  border: 1px solid#85cee2;
+  list-style-type: none;
+  
+}
+
+
+

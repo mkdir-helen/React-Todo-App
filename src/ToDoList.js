@@ -8,7 +8,10 @@ class ToDoList extends Component {
         super(props);
         this.state = {
             term: '',
-            items: []
+            items: [],
+            style: {
+                float: "right"
+            }
         }
     }
     render(){
@@ -22,7 +25,7 @@ class ToDoList extends Component {
                     <input value={this.state.term} onChange={this._onChange} placeholder="Enter Todo"/>
                     <button type="submit">add</button>
                 </form>
-                <List items={this.state.items} _delete={this._delete} onSortEnd={this.onSortEnd} />
+                <List items={this.state.items} _delete={this._delete} onSortEnd={this.onSortEnd} helperClass="help" style={this.state.style} />
             </div>
         );
     }
@@ -49,7 +52,7 @@ class ToDoList extends Component {
 
     onSortEnd = ({oldIndex, newIndex}) => {
         this.setState({
-          items: arrayMove(this.state.items, oldIndex, newIndex),
+          items: arrayMove(this.state.items, oldIndex, newIndex)
         });
       };
 }

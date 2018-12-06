@@ -24,9 +24,8 @@ const List = SortableContainer((props) => {
     return (
       <ul>
           {props.items.map((item, index) => {
-              console.log(item);
               return (
-                  <SortableList key={index} index={index} item={item} _delete={(e)=> props._delete(index)} />
+                  <SortableList key={index} index={index} item={item} _delete={(e)=> props._delete(index)} style={props.style}/>
                   
                   )
           })}
@@ -36,9 +35,9 @@ const List = SortableContainer((props) => {
 
 const SortableList = SortableElement((props) => {
     return (
-        <li>
+        <li >
             {props.item}
-            <button onClick={(e)=> props._delete(props.index)}>Done</button>
+            <button onClick={(e)=> props._delete(props.index)} style={props.style}>Done</button>
         </li>
     )
 })
